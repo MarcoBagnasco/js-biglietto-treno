@@ -22,3 +22,13 @@ console.log(price); //test
 // 3.
 var age = parseInt(prompt('Quanti hanni hai?'));
 console.log(age); //test
+
+// 4.
+var juniorDiscount = 0.8;
+var seniorDiscount = 0.6;
+if(age < 18){
+    price *= juniorDiscount;
+} else if(age > 65){
+    price *= seniorDiscount;
+}
+console.log(price); //test
