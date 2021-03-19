@@ -13,3 +13,8 @@
 // 1.
 var km = parseInt(prompt('Quanti km intendi percorrere?'));
 console.log(km); //test
+
+// 2.
+var pricePerKm = 0.21;
+var price = km * pricePerKm;
+console.log(price); //test
