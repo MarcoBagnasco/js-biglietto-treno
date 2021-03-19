@@ -13,12 +13,26 @@
 // 1.
 alert('Benvenuto!\nProcediamo con l\'acquisto del biglietto...');
 var km = parseInt(prompt('Quanti km intendi percorrere?'));
-// console.log(km); //test
+
+// Data Validation
+var defaultKm = 'Ti assegneremo 10km di default.';
+if(isNaN(km)){
+    alert('Non hai inserito un numero\n' + defaultKm);
+    km = 10;
+} else if( km <= 0 || km > 10000 ){
+    if(km < 0){
+        alert('Hai inserito valori negativi\n' + defaultKm);
+    } else if(km == 0){
+        alert('Per stare fermo non serve prendere il treno...\n' + defaultKm);
+    } else{
+        alert('La nostra rete ferroviaria non è così estesa!\n' + defaultKm);
+    }
+    km = 10;
+}
 
 // 2.
 var pricePerKm = 0.21;
 var price = km * pricePerKm;
-// console.log(price); //test
 
 // 3.
 var age;
@@ -27,7 +41,15 @@ var today = new Date();
 var birthDay = parseInt(prompt('Inserisci la tua data di nascita nel formato gg/mm/aaaa.\nGiorno: '));
 var birthMonth = parseInt(prompt('Inserisci la tua data di nascita nel formato gg/mm/aaaa.\nMese: '));
 var birthYear = parseInt(prompt('Inserisci la tua data di nascita nel formato gg/mm/aaaa.\nAnno: '));
-// console.log(birthDay, birthMonth, birthYear); //test
+
+//Data Validation
+if( (isNaN(birthDay) || isNaN(birthMonth) || isNaN(birthYear)) || (birthDay < 1 || birthDay > 31) || (birthMonth < 1 || birthMonth > 12) || (birthYear < 1900 || birthYear >= today.getFullYear()) || (birthDay > 29 && birthMonth == 2) ){
+    alert('Hai inserito una data non valida.\nTi assegneremo la data di nascita di deafult 01/01/2000');
+    birthDay = 1;
+    birthMonth = 1;
+    birthYear = 2000;
+}
+
 if( ( today.getMonth() + 1) > birthMonth ){
     age = today.getFullYear() - birthYear;
 } else if ( ( (today.getMonth() + 1) == birthMonth ) && ( today.getDate() >= birthDay ) ){
@@ -41,8 +63,6 @@ if( ( today.getMonth() + 1) > birthMonth ){
     age = (today.getFullYear() - birthYear) - 1;
 }
 
-// console.log(age); //test
-// console.log(happyBirthday); //test
 // 4.
 var juniorDiscount = 0.8;
 var seniorDiscount = 0.6;
