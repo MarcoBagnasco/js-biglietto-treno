@@ -26,9 +26,15 @@ console.log(age); //test
 // 4.
 var juniorDiscount = 0.8;
 var seniorDiscount = 0.6;
+
 if(age < 18){
     price *= juniorDiscount;
 } else if(age > 65){
     price *= seniorDiscount;
 }
 console.log(price); //test
+
+// 5.
+var priceString = '€' + price.toFixed(2)
+
+document.getElementById('price').innerHTML = 'Il prezzo del tuo bigietto è ' + priceString;
