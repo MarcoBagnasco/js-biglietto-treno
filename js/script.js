@@ -18,3 +18,7 @@ console.log(km); //test
 var pricePerKm = 0.21;
 var price = km * pricePerKm;
 console.log(price); //test
+
+// 3.
+var age = parseInt(prompt('Quanti hanni hai?'));
+console.log(age); //test
