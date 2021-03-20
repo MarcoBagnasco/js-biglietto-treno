@@ -72,13 +72,22 @@ if(age < 18){
 } else if(age > 65){
     price *= seniorDiscount;
 }
-// console.log(price); //test
 
 // 5.
 var priceString = '€' + price.toFixed(2)
 
-if( !happyBirthday){
+document.getElementById('ticket-km').innerHTML = 'Tratta da percorrere: ' + km + 'km'
+document.getElementById('ticket-born-date').innerHTML = 'Data di nascita: ' + birthDay + '/' + birthMonth + '/' + birthYear;
+
+if(age < 18){
+    document.getElementById('discount').innerHTML = 'Hai diritto allo sconto junior pari al 20%!';
+} else if(age > 65){
+    document.getElementById('discount').innerHTML = 'Hai diritto allo sconto senior pari al 40%!';
+}
+
+if(!happyBirthday){
     document.getElementById('price').innerHTML = 'Il prezzo del tuo biglietto è ' + priceString;
 } else {
-    document.getElementById('price').innerHTML = 'Oggi è il tuo compleanno e viaggi GRATIS!<br/>Tanti Auguri!!!!';
+    document.getElementById('price').innerHTML = 'Oggi è il tuo compleanno e viaggi GRATIS!';
+    document.getElementById('happy').innerHTML = '<div class="party">TANTI AUGURI!!!</div>';
 }

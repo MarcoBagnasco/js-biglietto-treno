@@ -5,16 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ticket Price Calculator</title>
-
+    
     <!-- STYLE -->
     <link rel="stylesheet" href="./css/style.css">
+    
+    <!-- FAVICON -->
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- APP MAIN -->
-    <main class="app-main">
-        <h1>Benvenuto in TrooleanItalia</h1>
-        <div id="price"></div>
+    <main class="app-main pad-30">
+        <div class="ticket-window pad-30 radius-20">
+            <img src="./img/Troolean.png" alt="">
+            <h1>Benvenuto in TrooleanItalia</h1>
+            <!-- Ticket -->
+            <div class="ticket pad-30 radius-20">
+                <div id="ticket-km"></div>
+                <div id="ticket-born-date"></div>
+                <div id="discount"></div>
+                <div id="happy"></div>
+                <div id="price" class="radius-20"></div>
+            </div>
+        </div>
     </main>
+
     <!-- JAVASCRIPT -->
     <script src="./js/script.js"></script>
 </body>

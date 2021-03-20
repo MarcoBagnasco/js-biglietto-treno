@@ -5,20 +5,77 @@
     box-sizing: border-box;
 }
 body{
+    font-family: 'Nunito', sans-serif;
     font-size: 24px;
     color: #000;
     background-image: url('../img/train.jpg');
+}
+
+/* UTILITIES */
+.pad-30{
+    padding: 30px;
+}
+.radius-20{
+    border-radius: 20px;
+}
+.party{
+    padding: 10px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff4b4b;
+    text-shadow: 0 0 4px #fff;
+    background-image: url('https://acegif.com/wp-content/uploads/2020/05/confetti.gif');
+    background-size: contain;
+    background-color: #006c679a;
+    border-radius: 50%;
 }
 
 /* APP MAIN */
 .app-main{
     height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.3);
 }
-.app-main #price{
+.app-main .ticket-window{
+    height: 90vh;
     text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    overflow: auto;
+}
+.ticket-window img{
+    width: 70%;
+    margin-bottom: 50px;
+}
+/* Ticket */
+.ticket-window .ticket{
+    width: 70%;
+    margin: 40px auto;
+    background-color: #fff;
+}
+.ticket-window .ticket #ticket-km,
+.ticket-window .ticket #ticket-born-date{
+    margin-bottom: 20px;
+}
+.ticket-window .ticket #discount{
+    margin-top: 70px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ff4b4b;
+    animation: flash .6s linear 5;
+}
+@keyframes flash {
+    from, 50%{
+        opacity: 1;
+    }
+    51%, to{
+        opacity: 0;
+    }
+}
+.ticket-window .ticket #price{
+    margin-top: 70px;
+    padding: 20px;
+    color: #fff;
+    background-color: #000;
 }
